@@ -1,0 +1,36 @@
+version: '3.6'
+services:
+  static:
+    build: /home/azureuser
+    ports:
+      - "8000:8000"
+    restart: unless-stopped 
+
+  frontend:
+    build: /home/azureuser/frontend
+    ports:
+      - "80:8001"
+    restart: unless-stopped
+    environment:
+      - APP_PORT=8001
+      - STATIC_URL=http://static:8000
+      - QUOTE_SERVICE_URL=http://quotes:8002
+      - NEWSFEED_SERVICE_URL=http://newsfeed:8003
+      - NEWSFEED_SERVICE_TOKEN=T1&eWbYXNWG1w1^YGKDPxAWJ@^et^&kX
+
+  quotes:
+    build: /home/azureuser/quotes
+    ports:
+      - "8002:8002"
+    restart: unless-stopped
+    environment:
+      - APP_PORT=8002
+
+  newsfeed:
+    build: /home/azureuser/newsfeed
+    ports:
+      - "8003:8003"
+    restart: unless-stopped
+    environment:
+      - APP_PORT=8003
+
