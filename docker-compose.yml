@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   static:
-    build: $HOME/infra-solution/static/
+    build: $HOME/infra-problem/front-end/public/
     ports:
       - "8000:8000"
     restart: unless-stopped 
