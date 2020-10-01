@@ -1,13 +1,13 @@
 version: '3.6'
 services:
   static:
-    build: /home/azureuser
+    build: $HOME/infra-solution/static/
     ports:
       - "8000:8000"
     restart: unless-stopped 
 
   frontend:
-    build: /home/azureuser/frontend
+    build: $HOME/infra-solution/frontend/
     ports:
       - "80:8001"
     restart: unless-stopped
@@ -19,7 +19,7 @@ services:
       - NEWSFEED_SERVICE_TOKEN=T1&eWbYXNWG1w1^YGKDPxAWJ@^et^&kX
 
   quotes:
-    build: /home/azureuser/quotes
+    build: $HOME/infra-solution/quotes/
     ports:
       - "8002:8002"
     restart: unless-stopped
@@ -27,7 +27,7 @@ services:
       - APP_PORT=8002
 
   newsfeed:
-    build: /home/azureuser/newsfeed
+    build: $HOME/infra-solution/newsfeed/
     ports:
       - "8003:8003"
     restart: unless-stopped
