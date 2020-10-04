@@ -28,6 +28,7 @@ $ cd files
 4) Copy your Private Key File (Name: id_rsa) to the folder
 4) Run the following commands to execute the Terraform deployment:
 ```sh
+$ terraform init
 $ terraform plan
 $ terraform apply
 ```
