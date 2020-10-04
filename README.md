@@ -20,10 +20,9 @@ First, the Terraform Deployment must be executed because it provides the require
 ```sh
 $ az login
 ```
-3) If not done yet, unzip the archive, open the Terminal and navigate to the location where the Terraform files are located:
+3) Navigate to the folder terraform-thoughtworks
 ```sh
-$ unzip files.zip
-$ cd files
+$ cd terraform-thoughtworks
 ```
 4) Copy your Private Key File (Name: id_rsa) to the folder
 4) Run the following commands to execute the Terraform deployment:
@@ -33,7 +32,9 @@ $ terraform plan
 $ terraform apply
 ```
 
-Note: If a Service Principal is available, the Terraform Configuration File can be adapted very quickly to use this form of authentication.
+Notes: 
+- If a Service Principal is available, the Terraform Configuration File can be adapted very quickly to use this form of authentication.
+- The contents of the Docker folder will be pulled from my GitHub repository during deployment. The folder is only part of the ZIP file, so you can judge the complete work.
 
 ### View Results
 It takes about nine minutes until the Terraform script is ready. During this time eight resources are created in Microsoft Azure, the automation script is executed and the containers are started via docker-compose. Since port 80 has been configured as the inbound port, the page can be accessed with the browser on the host system.
