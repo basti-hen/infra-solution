@@ -24,7 +24,7 @@ $ az login
 ```sh
 $ cd terraform-thoughtworks
 ```
-4) Copy your Private Key File (Name: id_rsa) to the folder
+4) Copy your Private Key (Name: id_rsa) and your Public Key (Name: id_rsa.pub) to the folder
 4) Run the following commands to execute the Terraform deployment:
 ```sh
 $ terraform init
